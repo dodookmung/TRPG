@@ -1,5 +1,5 @@
 import os
-from enum import IntEnum
+from scripts.features import ClassType
 
 
 def ClearScreen():
@@ -11,19 +11,16 @@ def ClearScreen():
 
 
 
-class ClassType(IntEnum):
-        NoneType = 0,
-        Knight = 1,
-        Archer = 2,
-        Mage = 3
+
 
 def ChooseClass():
-    print('직업을 선택하세요')
+    print('직업을 선택하세요.')
     print('[1] 기사')
     print('[2] 궁수')
     print('[3] 법사')
+    print()
 
-    user_input = str(input())
+    user_input = str(input('> '))
     choice = ClassType.NoneType
     
     if user_input == '1':
@@ -43,7 +40,7 @@ def main():
 
         if choice == ClassType.NoneType:
             ClearScreen()
-            print('잘못된 입력입니다. 다시 선택해주세요.\n')
+            print('[ 잘못된 입력입니다. 다시 선택해주세요.]')
         elif choice != ClassType.NoneType:
               break
         
